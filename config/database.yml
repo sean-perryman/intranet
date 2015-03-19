@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: it_ticket_tracker_development
+
+test:
+  <<: *default
+  database: it_ticket_tracker_test
+
+production:
+  <<: *default
+  database: it_ticket_tracker_production
+  username: <%= ENV['POSTGRESUSER'] %>
+  password: <%= ENV['POSTGRESPASSWORD'] %>

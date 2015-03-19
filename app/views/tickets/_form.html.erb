@@ -1,0 +1,11 @@
+<%= simple_form_for @ticket do |f| %>
+  <%= f.error_notification %>
+  <div class="col-md-6">
+    <%= f.input :date_submitted, :as => :hidden, input_html: { value: Time.now } %>
+    <%= f.input :date_occurred, :label => false, :as => :datetime_picker, :placeholder => "Date problem started" %>
+    <%= f.input :affected_user, :label => false, :placeholder => "Affected user" %>
+    <%= f.input :problem_description, :label => false, :placeholder => "Description of the problem" %>
+    
+    <%= f.button :submit %>
+  </div>
+<% end %>

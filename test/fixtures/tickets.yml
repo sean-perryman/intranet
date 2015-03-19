@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_submitted: 2015-03-02 13:10:30
+  date_occurred: 2015-03-02 13:10:30
+  affected_user: MyString
+  problem_description: MyText
+  date_resolved: 2015-03-02 13:10:30
+  problem_resolution: MyText
+
+two:
+  date_submitted: 2015-03-02 13:10:30
+  date_occurred: 2015-03-02 13:10:30
+  affected_user: MyString
+  problem_description: MyText
+  date_resolved: 2015-03-02 13:10:30
+  problem_resolution: MyText

@@ -13,11 +13,11 @@ class TicketsController < ApplicationController
   end
 
   def open
-    @tickets = Ticket.where( :date_submitted.blank? )
+    @tickets = Ticket.select(:date_submitted).where( date_submitted: nil )
   end
 
   def closed
-    @tickets = Ticket.where( :date_submitted.present? )
+    @tickets = Ticket.select(:date_submitted).where.not( date_submitted: nil )
   end
 
   # GET /tickets/new

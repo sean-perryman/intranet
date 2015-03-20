@@ -1,0 +1,23 @@
+.container.well
+  %h1 All Trouble Tickets
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Date submitted
+        %th Date occurred
+        %th Affected user
+        %th Date resolved
+        %th{:colspan => "1"}
+    %tbody
+      - @tickets.order("date_submitted").each do |ticket|
+        %tr.danger
+          %td= ticket.date_submitted.try(:strftime, "%a, %b %d %Y %l:%M %p")
+          %td= ticket.date_occurred.try(:strftime, "%a, %b %d %Y %l:%M %p")
+          %td= ticket.affected_user
+          %td= ticket.date_resolved.try(:strftime, "%a, %b %d %Y %l:%M %p")
+          %td= link_to 'Show', ticket, :class => 'btn btn-sm btn-default'
+          %td= link_to 'Edit', edit_ticket_path(ticket), :class => 'btn btn-sm btn-default'
+          %td= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'hidden btn btn-sm btn-danger'
+            
+  %br/
+  = link_to 'New Ticket', new_ticket_path, :class => "btn btn-default"

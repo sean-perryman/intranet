@@ -1,11 +1,11 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'it_ticket_tracker'
-set :repo_url, 'https://github.com/sean-perryman/it_ticket_tracker.git'
+set :application, 'intranet'
+set :repo_url, 'https://github.com/sean-perryman/intranet.git'
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deploy/it_ticket_tracker'
+set :deploy_to, '/home/deploy/intranet'
 
 # Default value for :linked_files is []
 set :linked_files, %w{config/database.yml}

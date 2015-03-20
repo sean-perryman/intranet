@@ -13,11 +13,11 @@ class TicketsController < ApplicationController
   end
 
   def open
-    @tickets = Ticket.where("date_submitted IS NULL")
+    @tickets = Ticket.where("date_resolved IS NULL")
   end
 
   def closed
-    @tickets = Ticket.where("date_submitted IS NOT NULL")
+    @tickets = Ticket.where("date_resolved IS NOT NULL")
   end
 
   # GET /tickets/new

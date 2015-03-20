@@ -12,6 +12,14 @@ class TicketsController < ApplicationController
   def show
   end
 
+  def open
+    @tickets = Ticket.where( :date_submitted.blank? )
+  end
+
+  def closed
+    @tickets = Ticket.where( :date_submitted.present? )
+  end
+
   # GET /tickets/new
   def new
     @ticket = Ticket.new

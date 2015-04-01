@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get '/tickets/closed' => 'tickets#closed'
 
   resources :tickets
-
-  root 'tickets#index'
+  
+  root 'home#index'
 end

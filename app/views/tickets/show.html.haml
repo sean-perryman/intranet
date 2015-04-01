@@ -1,0 +1,23 @@
+.container.well
+	%h3 Ticket for #{@ticket.affected_user}
+	%table.table
+		%tr
+			%td	Date Submitted
+			%td #{@ticket.date_submitted}
+		%tr
+			%td Date Occurred
+			%td #{@ticket.date_occurred}
+		%tr
+			%td Affected User
+			%td #{@ticket.affected_user}
+		%tr
+			%td Problem Description
+			%td #{@ticket.problem_description}
+		%tr
+			%td Date Resolved
+			%td #{@ticket.date_resolved}
+		%tr
+			%td Problem Resolution
+			%td #{@ticket.problem_resolution}
+
+	= link_to 'Back', tickets_path, :class => "btn btn-default"

@@ -23,8 +23,8 @@
                 IT Support
                 %span.caret
               %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "/tickets/new"} New Ticket
+                %li= link_to "New Ticket", new_ticket_path
+                %li= link_to "Report VM Problem", new_vm_problem_path
                 - if current_user
                   - if current_user.admin?
                     %li.divider
@@ -33,16 +33,14 @@
                     %li= link_to "Closed Tickets", tickets_closed_path
                     %li.divider
                     %li= link_to "VM Problems", vm_problems_path
-            %li= link_to "Report VM Problem", new_vm_problem_path
-            - if current_user
-              - if current_user.admin?
-                %li.dropdown
-                  %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                    User Admin
-                    %span.caret
-                  %ul.dropdown-menu{:role => "menu"}                    
-                    %li= link_to "All Users", users_path
-                    %li= link_to "New User", new_user_path
+            - if current_user.admin?
+              %li.dropdown
+                %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  User Admin
+                  %span.caret
+                %ul.dropdown-menu{:role => "menu"}                    
+                  %li= link_to "All Users", users_path
+                  %li= link_to "New User", new_user_path
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               %li= link_to "Logged in as #{current_user.email}", edit_user_path(current_user.id)

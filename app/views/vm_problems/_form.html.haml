@@ -1,0 +1,5 @@
+= simple_form_for(@vm_problem) do |f|
+  = f.error_notification
+  = f.input :who_are_you
+  = f.input :what_is_the_problem
+  = f.button :submit, "Report"

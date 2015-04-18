@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Who are you:
+  = @vm_problem.who_are_you
+%p
+  %strong What is the problem:
+  = @vm_problem.what_is_the_problem
+%p
+  %strong Resolved:
+  = @vm_problem.resolved
+= link_to 'Edit', edit_vm_problem_path(@vm_problem)
+|
+= link_to 'Back', vm_problems_path

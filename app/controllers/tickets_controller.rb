@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  before_action :check_for_admin, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /tickets
   # GET /tickets.json
@@ -87,5 +88,11 @@ class TicketsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_params
       params.require(:ticket).permit(:date_submitted, :date_occurred, :affected_user, :problem_description, :date_resolved, :problem_resolution)
+    end
+
+    def check_for_admin
+      if !current_user.admin
+        redirect_to root_path
+      end
     end
 end

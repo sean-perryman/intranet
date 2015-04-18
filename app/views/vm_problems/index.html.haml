@@ -1,0 +1,17 @@
+.container.well
+  .col-md-6
+    %h1 Listing VM Problems
+    %table.table.table-striped
+      %tr
+        %th User with issue
+        %th Problem
+        %th Resolved?
+        %th{:colspan => "2"}
+      
+      - @vm_problems.each do |vm_problem|
+        %tr
+          %td= vm_problem.who_are_you
+          %td= vm_problem.what_is_the_problem
+          %td= vm_problem.resolved
+          %td= link_to 'Show', vm_problem, :class => "btn btn-default"
+          %td= link_to 'Edit', edit_vm_problem_path(vm_problem), :class => "btn btn-default"

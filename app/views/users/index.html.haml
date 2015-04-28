@@ -6,9 +6,11 @@
 					%tr
 						%th Email Address
 						%th Admin?
+						%th Actions
 					- @users.each do |user|
 						%tr
 							%td= user.email
 							%td= user.admin
+							%td= edit_user_path(user), "Edit User", :class => "btn btn-default"
 
 				= link_to "New User", new_user_path, :class => "btn btn-default"

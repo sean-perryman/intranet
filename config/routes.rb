@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :locations
+
   resources :vm_problems, :users
 
   get '/tickets/open' => 'tickets#open'

@@ -1,0 +1,20 @@
+.container.well
+  
+  %h1 Yard Locations
+  
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Name
+        %th Phone
+        %th{:colspan => "2"}
+    %tbody
+      - @locations.each do |location|
+        %tr
+          %td= location.name
+          %td= location.phone
+          %td= link_to 'Show', location, :class => "btn btn-sm btn-default"
+          %td= link_to 'Edit', edit_location_path(location), :class => "btn btn-sm btn-default"
+          
+
+  = link_to 'New Location', new_location_path, :class => "btn btn-default"

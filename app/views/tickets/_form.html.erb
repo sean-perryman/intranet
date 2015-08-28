@@ -5,6 +5,8 @@
     <%= f.input :date_occurred, :label => false, :as => :datetime_picker, :placeholder => "Date problem started" %>
     <%= f.input :affected_user, :label => false, :placeholder => "Affected user" %>
     <%= f.input :problem_description, :label => false, :placeholder => "Description of the problem" %>
+    <%= f.input :date_resolved, :as => :datetime_picker %>
+	  <%= f.input :problem_resolution %>
     
     <%= f.button :submit %>
   </div>
